@@ -7,3 +7,12 @@ def index(request):
 
 def blog(request):
     return render(request, 'proton/blog.html')
+
+def blog_details(request):
+    return render(request, 'proton/blog-details.html')
+
+def services_details(request):
+    return render(request, 'proton/services-details.html')
+
+def portfolio_details(request):
+    return render(request, 'proton/portfolio-details.html')

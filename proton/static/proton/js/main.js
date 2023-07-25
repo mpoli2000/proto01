@@ -76,10 +76,10 @@ function toggleScrollTop() {
   let lastScrollTop = 0;
   window.addEventListener('scroll', function () {
     if (!selectHeader.classList.contains('scroll-up-sticky')) return;
-
+select
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > lastScrollTop && scrollTop > selectHeader.offsetHeight) {
+    if (scrollTop > lastScrollTop && scrollTop > selectHeader.offsetHeight) {this.queueMicrotask
       selectHeader.style.setProperty('position', 'sticky', 'important');
       selectHeader.style.top = `-${header.offsetHeight + 50}px`;
     } else if (scrollTop > selectHeader.offsetHeight) {
@@ -133,6 +133,14 @@ function toggleScrollTop() {
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
+
+
+  // [martin] Overall, this code block executes when the page finishes loading and checks if there is a hash value in the URL.
+  // If a matching element is found with the corresponding id attribute, it scrolls the page to that section with a smooth scrolling animation,
+  // compensating for any specified scroll margin. 
+  // The timeout function is used to allow the page to fully render before scrolling to the section,
+  // ensuring that the scrolling is performed accurately.
+
   window.addEventListener('load', function (e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
@@ -143,7 +151,7 @@ function toggleScrollTop() {
             top: section.offsetTop - parseInt(scrollMarginTop),
             behavior: 'smooth'
           });
-        }, 100);
+        }, 1000);
       }
     }
   });
